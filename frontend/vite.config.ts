@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import basicSsl from '@vitejs/plugin-basic-ssl';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), basicSsl()],
-  build: {
-    outDir: './docs'
+  server: {
+    allowedHosts: ['ec0f-87-116-167-201.ngrok-free.app', 'localhost'],
   },
-  base: './'
-});
+  plugins: [react()],
+})
